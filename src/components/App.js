@@ -32,7 +32,9 @@ class App extends Component {
   }
 
   //bind ArrowRight keydown event
-  componentDidMount() {}
+  componentDidMount() {
+    document.addEventListener("keyDown", this.buttonClickHandler);
+  }
 
   render() {
     return <div className="playground">{this.renderChoice()}</div>;
