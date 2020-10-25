@@ -22,6 +22,13 @@ class App extends Component {
       });
     }
   }
+  handleRight(event) {
+    if (event.keyCode === 39) {
+      this.setState({
+        left: +this.state.ballPosition.left.split("px")[0] + 5 + "px"
+      });
+    }
+  }
   renderChoice() {
     if (this.state.renderBall) {
       return <div className="ball" style={this.state.ballPosition}></div>;
@@ -33,7 +40,7 @@ class App extends Component {
 
   //bind ArrowRight keydown event
   componentDidMount() {
-    document.addEventListener("keyDown", this.buttonClickHandler);
+    document.addEventListener("keyDown", this.handleRight);
   }
 
   render() {
