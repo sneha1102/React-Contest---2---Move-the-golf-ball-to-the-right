@@ -14,8 +14,13 @@ class App extends Component {
   }
 
   //call back function
-  buttonClickHandler() {
+  buttonClickHandler(event) {
     this.setState({ renderBall: !this.state.renderBall });
+    if (event.keyCode === 39) {
+      this.setState({
+        left: +this.state.ballPosition.left.split("px")[0] + 5 + "px"
+      });
+    }
   }
   renderChoice() {
     if (this.state.renderBall) {
@@ -27,16 +32,7 @@ class App extends Component {
   }
 
   //bind ArrowRight keydown event
-  componentDidMount(event) {
-    if (event.keyCode === 39) {
-      document.addEventListener(
-        "keyDown",
-        this.setState({
-          left: +this.state.ballPosition.left.split("px")[0] + 5 + "px"
-        })
-      );
-    }
-  }
+  componentDidMount() {}
 
   render() {
     return <div className="playground">{this.renderChoice()}</div>;
