@@ -17,7 +17,7 @@ class App extends Component {
   //call back function
   buttonClickHandler(event) {
     this.setState({ renderBall: true });
-    document.addEventListener("keyDown", this.handleRight);
+    document.addEventListener("keydown", this.handleRight);
   }
   handleRight(event) {
     if (event.keyCode === 39) {
