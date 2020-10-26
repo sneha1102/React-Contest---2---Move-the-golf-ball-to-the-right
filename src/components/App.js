@@ -18,7 +18,9 @@ class App extends Component {
     this.setState({ renderBall: !this.state.renderBall });
     if (event.keyCode === 39) {
       this.setState({
-        left: +this.state.ballPosition.left.split("px")[0] + 5 + "px"
+        ballPosition: {
+          left: +this.state.ballPosition.left.split("px")[0] + 5 + "px"
+        }
       });
     }
   }
@@ -40,7 +42,7 @@ class App extends Component {
 
   //bind ArrowRight keydown event
   componentDidMount() {
-    document.addEventListener("keydown", this.handleRight);
+    document.addEventListener("keyDown", this.handleRight);
   }
 
   render() {
