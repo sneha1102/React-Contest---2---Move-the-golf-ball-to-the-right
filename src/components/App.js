@@ -27,7 +27,9 @@ class App extends Component {
   handleRight(event) {
     if (event.keyCode === 39) {
       this.setState({
-        left: +this.state.ballPosition.left.split("px")[0] + 5 + "px"
+        ballPosition: {
+          left: +this.state.ballPosition.left.split("px")[0] + 5 + "px"
+        }
       });
     }
   }
